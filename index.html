@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HexaWars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" class="app-shell">
+    <section id="main-menu" class="screen active">
+      <div class="menu-background" aria-hidden="true">
+        <div class="hex-grid"></div>
+      </div>
+
+      <div class="menu-content">
+        <p class="eyebrow">HEXAGONAL STRATEGY GAME</p>
+        <h1>HEXAWARS</h1>
+        <p class="subtitle">12-sided battlefield · Pure strategy</p>
+
+        <nav class="main-menu" aria-label="메인 메뉴">
+          <button class="menu-button primary" data-action="start">게임 시작</button>
+          <button class="menu-button" data-action="room">방 만들기</button>
+          <button class="menu-button" data-action="settings">설정</button>
+        </nav>
+
+        <p class="version">ALPHA 0.1 · LOCAL BUILD</p>
+      </div>
+    </section>
+
+    <section id="room-screen" class="screen modal-screen" hidden>
+      <div class="panel">
+        <button class="close-button" data-action="back" aria-label="닫기">×</button>
+        <p class="eyebrow">MULTIPLAYER</p>
+        <h2>방 만들기</h2>
+        <label>방 이름<input id="room-name" type="text" placeholder="HexaWars Room" maxlength="24"></label>
+        <label>최대 인원<select id="room-size"><option>2</option></select></label>
+        <button class="menu-button primary" data-action="create-room">방 생성</button>
+        <p id="room-status" class="status"></p>
+      </div>
+    </section>
+
+    <section id="settings-screen" class="screen modal-screen" hidden>
+      <div class="panel">
+        <button class="close-button" data-action="back" aria-label="닫기">×</button>
+        <p class="eyebrow">SYSTEM</p>
+        <h2>설정</h2>
+        <label class="toggle-row"><span>효과음</span><input id="sound-toggle" type="checkbox" checked></label>
+        <label class="toggle-row"><span>애니메이션</span><input id="animation-toggle" type="checkbox" checked></label>
+        <label class="toggle-row"><span>고대비 UI</span><input id="contrast-toggle" type="checkbox"></label>
+        <button class="menu-button" data-action="back">저장하고 돌아가기</button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen game-placeholder" hidden>
+      <div class="game-placeholder-inner">
+        <p class="eyebrow">BATTLEFIELD</p>
+        <h2>게임 보드 준비 중</h2>
+        <p>12×12 변의 정육각형 전장을 여기에 연결합니다.</p>
+        <button class="menu-button" data-action="back">메인 메뉴</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
